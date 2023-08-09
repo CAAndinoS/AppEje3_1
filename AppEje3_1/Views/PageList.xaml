@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEje3_1.Views.PageList"
+             xmlns:conver="clr-namespace:AppEje3_1.Config">
+    <ContentPage.Resources>
+        <conver:Base64toImage x:Key="ByteArray"/>
+    </ContentPage.Resources>
+
+    <ListView x:Name="ListViewAlumnos"
+          HasUnevenRows="True"
+          ItemSelected="ListViewAlumnos_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Borrar"
+                                       BackgroundColor="Red"
+                                       CommandParameter="{Binding .}"
+                                       Invoked="SwipeItem_Invoked" />
+                                <SwipeItem Text="Actualizar"
+                                       BackgroundColor="Green"
+                                       CommandParameter="{Binding .}"
+                                       Invoked="SwipeItem_Actualizar_Invoked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="CenterAndExpand">
+                            <Image Source="{Binding foto, Converter={StaticResource ByteArray}}" Aspect="AspectFill" HeightRequest="50" WidthRequest="50" />
+                            <StackLayout Spacing="5" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding nombres}" FontSize="16" />
+                                <Label Text="{Binding apellidos}" FontSize="14" />
+                                <!-- Puedes mostrar otras propiedades de Alumnos aquí -->
+                            </StackLayout>
+                        </StackLayout>
+                    </SwipeView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
