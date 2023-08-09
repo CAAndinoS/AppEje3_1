@@ -11,3 +11,4 @@ Luis Francisco Herrera--201930060229
 Nelson Daniel Herrera Tejeda--201910040249
 
 Link de github: https://github.com/CAAndinoS/AppEje3_1
+Link de Video: https://drive.google.com/file/d/1pQ9o8xhMqf9hoiu6YaVW6M94iiC4v5Pl/view?usp=sharing
